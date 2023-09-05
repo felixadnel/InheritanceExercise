@@ -6,24 +6,34 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            // TODO Be sure to follow best practice when creating your classes
+            var myBird = new Bird();
+            myBird.WingColor = "pink";
+            myBird.CanFLy = true;
+            myBird.WillMigrate = true;
+            myBird.BeakLenght = 3.7;
 
-            // Create a class Animal
-            // give this class 4 members that all Animals have in common
+            var lizard = new Reptile();
+            lizard.CanGrowTail = true;
+            lizard.IsColdBlooded = true;
+            lizard.IsScaly = true;
+            lizard.Habitiat = "swamp";
 
+            var myAnimals = new Animal[] { myBird, lizard };
 
-            // Create a class Bird
-            // give this class 4 members that are specific to Bird
-            // Set this class to inherit from your Animal Class
+            foreach (var animal in myAnimals)
+            {
+                Console.WriteLine($"Alive:{animal.IsAlive}");
+                Console.WriteLine($"Age:{animal.Age} years old");
+                Console.WriteLine($"It has {animal.LegCount} legs");
+                Console.WriteLine($"It lives by {animal.LandSeaAir}");
+                Console.WriteLine($"");
+            }
+            
+            
 
-            // Create a class Reptile
-            // give this class 4 members that are specific to Reptile
-            // Set this class to inherit from your Animal Class
-
-
-
-
-            /*Create an object of your Bird class
+            /* - DONE - 
+             * 
+             *Create an object of your Bird class 
              *  give values to your members using the object of your Bird class
              *  
              * Creatively display the class member values 
